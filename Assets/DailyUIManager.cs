@@ -10,6 +10,9 @@ public class DailyUIManager : MonoBehaviour {
 	};
 	public EScreenType ScreenType;
 	public RectTransform Envelope;
+	public Camera UICamera;
+	public float ScaleReference = 600;
+//	public AspectRatioFitter EnvelopeAF;
 	// Use this for initialization
 
 	void OnValidate () {
@@ -22,6 +25,13 @@ public class DailyUIManager : MonoBehaviour {
 		if (ScreenType == EScreenType.Dev) {
 			Envelope.sizeDelta = new Vector2(720, 1080);
 		} 
+		UICamera.orthographicSize = Envelope.sizeDelta.y / 2;
+//		float s = Envelope.sizeDelta.y / ScaleReference;
+//		Envelope.localScale = new Vector3 (s, s, s);
+//		var t = Envelope.sizeDelta;
+//		t.x /= s;
+//		t.y /= s;
+//		Envelope.sizeDelta = t;
 	}
 	void Start () {
 	

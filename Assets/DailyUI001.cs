@@ -10,6 +10,8 @@ public class DailyUI001 : MonoBehaviour
 	public InputField EmailIF;
 	public Button SubmitButton;
 	public Image BackgroundImage;
+	public CanvasGroup FrameCG;
+	public CanvasGroup TYFrame;
 
 	// Use this for initialization
 	void Start () {
@@ -44,14 +46,10 @@ public class DailyUI001 : MonoBehaviour
 
 	void onClick() {
 		Debug.LogFormat ("I am clicked {0}{1}", NameIF.text, EmailIF.text);
-//		NameIF.text = null;
-//		EmailIF.text = null;
 		float time = 3f;
-		
-		Vector3 start = FrameRT.localPosition;
-		Vector3 dest = start + new Vector3 (-1000, 0, 0);
-		
-		FrameRT.localPosition = start;
-		DOTween.To (() => FrameRT.localPosition, x => FrameRT.localPosition = x, dest, time);
+
+		DOTween.To (() => FrameCG.alpha, x => FrameCG.alpha = x, 0, time);
+		DOTween.To (() => TYFrame.alpha, x => TYFrame.alpha = x, 1, time);
+
 	}
 }
