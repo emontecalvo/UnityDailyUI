@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DailyUIManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DailyUI001.cs">
     <Files>
       <File FileName="Assets/DailyUIManager.cs" Line="35" Column="5" />
+      <File FileName="Assets/DailyUI001.cs" Line="56" Column="10" />
+      <File FileName="Assets/DailyUI002.cs" Line="25" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

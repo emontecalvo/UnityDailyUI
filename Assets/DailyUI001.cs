@@ -15,6 +15,8 @@ public class DailyUI001 : MonoBehaviour
 	const float TransitionTime = 1f;
 	// Use this for initialization
 	void Start () {
+
+		TYFrame.gameObject.SetActive (false);
 		SubmitButton.onClick.AddListener (onClick);
 //		ShortcutExtensions46.DOAnchorPos;
 //		MyRT.DOAnchorPos (new Vector2 (-1, 0), 1, true);
@@ -45,10 +47,13 @@ public class DailyUI001 : MonoBehaviour
 	}
 
 	void onClick() {
+		TYFrame.gameObject.SetActive (true);
 		Debug.LogFormat ("I am clicked {0}{1}", NameIF.text, EmailIF.text);
 
 		DOTween.To (() => FrameCG.alpha, x => FrameCG.alpha = x, 0, TransitionTime);
 		DOTween.To (() => TYFrame.alpha, x => TYFrame.alpha = x, 1, TransitionTime);
+
+		FrameCG.gameObject.SetActive (true);
 
 	}
 }
