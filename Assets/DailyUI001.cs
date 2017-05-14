@@ -12,7 +12,7 @@ public class DailyUI001 : MonoBehaviour
 	public Image BackgroundImage;
 	public CanvasGroup FrameCG;
 	public CanvasGroup TYFrame;
-
+	const float TransitionTime = 1f;
 	// Use this for initialization
 	void Start () {
 		SubmitButton.onClick.AddListener (onClick);
@@ -24,19 +24,19 @@ public class DailyUI001 : MonoBehaviour
 
 //		DOTween.To (() => FrameRT.offsetMin, x => FrameRT.offsetMin = x, new Vector2 (0, 0), 1f);
 //		DOTween.To (() => FrameRT.offsetMax, x => FrameRT.offsetMax = x, new Vector2 (0, 0), 1f);
-		float time = 3f;
+
 
 		Vector3 dest = FrameRT.localPosition;
-		Vector3 start = dest + new Vector3 (-1000, 0, 0);
+		Vector3 start = dest + new Vector3 (-500, 0, 0);
 
 		FrameRT.localPosition = start;
-		DOTween.To (() => FrameRT.localPosition, x => FrameRT.localPosition = x, dest, time);
+		DOTween.To (() => FrameRT.localPosition, x => FrameRT.localPosition = x, dest, TransitionTime);
 
 		Color DestColor = BackgroundImage.color;
 		Color StartColor = DestColor;
 		StartColor.a = 0;
 		BackgroundImage.color = StartColor;
-		DOTween.To (() => BackgroundImage.color, x => BackgroundImage.color = x, DestColor, time);
+		DOTween.To (() => BackgroundImage.color, x => BackgroundImage.color = x, DestColor, TransitionTime);
 	}
 	
 	// Update is called once per frame
@@ -46,10 +46,9 @@ public class DailyUI001 : MonoBehaviour
 
 	void onClick() {
 		Debug.LogFormat ("I am clicked {0}{1}", NameIF.text, EmailIF.text);
-		float time = 3f;
 
-		DOTween.To (() => FrameCG.alpha, x => FrameCG.alpha = x, 0, time);
-		DOTween.To (() => TYFrame.alpha, x => TYFrame.alpha = x, 1, time);
+		DOTween.To (() => FrameCG.alpha, x => FrameCG.alpha = x, 0, TransitionTime);
+		DOTween.To (() => TYFrame.alpha, x => TYFrame.alpha = x, 1, TransitionTime);
 
 	}
 }
