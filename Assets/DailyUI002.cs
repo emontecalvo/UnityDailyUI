@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
 
-public class DailyUI002 : MonoBehaviour 
+public class DailyUI002 : DailyUIBase
 {
 	public RectTransform MainFrame;
 

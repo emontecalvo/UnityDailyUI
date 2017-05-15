@@ -1,41 +1,51 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DailyUIManager : MonoBehaviour {
-	public enum EScreenType{
-		GalaxyS6, 
-		IPhone7,
-		Dev
-	};
-	public EScreenType ScreenType;
-	public RectTransform Envelope;
-	public Camera UICamera;
-	public float ScaleReference = 600;
-//	public AspectRatioFitter EnvelopeAF;
-	// Use this for initialization
-
-//	void OnValidate () {
-//		if (ScreenType == EScreenType.GalaxyS6) {
-//			Envelope.sizeDelta = new Vector2(1440, 2560);
-//		} 
-//		if (ScreenType == EScreenType.IPhone7) {
-//			Envelope.sizeDelta = new Vector2(750, 1334);
-//		} 
-//		if (ScreenType == EScreenType.Dev) {
-//			Envelope.sizeDelta = new Vector2(720, 1080);
-//		} 
-//		UICamera.orthographicSize = Envelope.sizeDelta.y / 2;
-////		float s = Envelope.sizeDelta.y / ScaleReference;
-////		Envelope.localScale = new Vector3 (s, s, s);
-////		var t = Envelope.sizeDelta;
-////		t.x /= s;
-////		t.y /= s;
-////		Envelope.sizeDelta = t;
-//	}
-	void Start () {
 	
+	public List<DailyUIBase> DaysList = new List<DailyUIBase>();
+	public int CurrentDay;
+	public Button PreviousBtn;
+	public Button NextBtn;
+
+	void Start () {
+		SetCurrentDay (0);
+		PreviousBtn.onClick.AddListener (onPreviousClicked);
+		NextBtn.onClick.AddListener (onNextClicked);
 	}
+
+	void SetCurrentDay(int dayiwant){
+		CurrentDay = dayiwant;
+		for (int i = 0; i < DaysList.Count; i++) {
+			DailyUIBase day = DaysList[i];
+			if (i == dayiwant) {
+				day.MakeActive();
+			} else {
+				day.MakeInactive();
+			}
+		}
+	}
+
+	void onPreviousClicked () {
+		if (CurrentDay == 0) {
+			SetCurrentDay(DaysList.Count - 1);
+		} else {
+			SetCurrentDay (CurrentDay - 1);	
+		}
+
+	}
+
+	void onNextClicked() {
+		if (CurrentDay == DaysList.Count - 1) {
+			SetCurrentDay (0);
+		} else {
+			SetCurrentDay (CurrentDay + 1);
+		}
+
+	}
+
 
 
 	// Update is called once per frame

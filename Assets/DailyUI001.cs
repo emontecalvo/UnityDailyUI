@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
 
-public class DailyUI001 : MonoBehaviour 
+public class DailyUI001 : DailyUIBase 
 {
 	public RectTransform FrameRT;
 	public InputField NameIF;
