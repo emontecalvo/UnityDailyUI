@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\DailyUI001.cs" />
      <Compile Include="Assets\DailyUI002.cs" />
+     <Compile Include="Assets\DailyUI003.cs" />
+     <Compile Include="Assets\DailyUI004.cs" />
      <Compile Include="Assets\DailyUIBase.cs" />
      <Compile Include="Assets\DailyUIManager.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
