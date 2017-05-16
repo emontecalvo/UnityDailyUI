@@ -15,11 +15,22 @@ https://unity3d.com/unity
 
 ### Development Roadmap
 
- - Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
- - Continue to refactor the code as patterns emerge
- - Once Day 100 is completed, deploy to the Android store
- - Deploy live to the web
+ - [] Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
+ 	- [] Days 1-10
+ 	- [] Days 11-20
+ 	- [] Days 21-30
+ 	- [] Days 31-40
+ 	- [] Days 41-50
+ 	- [] Days 51-60
+ 	- [] Days 61-70
+ 	- [] Days 71-80
+ 	- [] Days 81-90
+ 	- [] Days 91-100
+ - [] Continue to refactor the code as patterns emerge
+ - [] Once Day 100 is completed, deploy to the Android store
+ - [] Deploy live to the web
 
 
  *Thanks for reading*
+ 
  ~ Emily
