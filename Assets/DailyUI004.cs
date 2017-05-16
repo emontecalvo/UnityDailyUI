@@ -115,47 +115,85 @@ public class DailyUI004 : DailyUIBase
 		ActualNumber = 0;
 		UpdateNumberDisplay ();
 	}
-
+	
 	void OnAddClicked() {
-		Accumulator = ActualNumber;
-		ActualNumber = 0;
-		Added = true;
+		if (Added == true) {
+			Accumulator += ActualNumber;
+			ActualNumber = Accumulator;
+			UpdateNumberDisplay();
+			ActualNumber = 0;
+			Minus.interactable = false;
+			Multiply.interactable = false;
+			Divide.interactable = false;
+		} else {
+			Accumulator = ActualNumber;
+			ActualNumber = 0;
+			Added = true;
+		}
 		Subtracted = false;
 		Multiplied = false;
 		Divided = false;
 	}
 
 	void OnMinusClicked() {
-		Accumulator = ActualNumber;
-		ActualNumber = 0;
+		if (Subtracted == true) {
+			Accumulator -= ActualNumber;
+			ActualNumber = Accumulator;
+			UpdateNumberDisplay();
+			ActualNumber = 0;
+			Add.interactable = false;
+			Multiply.interactable = false;
+			Divide.interactable = false;
+		} else {
+			Accumulator = ActualNumber;
+			ActualNumber = 0;
+			Subtracted = true;
+		}
 		Added = false;
-		Subtracted = true;
 		Multiplied = false;
 		Divided = false;
 	}
-
+	
 	void OnMultiplyClicked() {
-		Accumulator = ActualNumber;
-		ActualNumber = 0;
-		Added = false;
-		Subtracted = false;
-		Multiplied = true;
-		Divided = false;
+		if (Multiplied == true) {
+			Accumulator *= ActualNumber;
+			ActualNumber = Accumulator;
+			UpdateNumberDisplay();
+			ActualNumber = 0;
+			Add.interactable = false;
+			Minus.interactable = false;
+			Divide.interactable = false;
+		} else {
+			Accumulator = ActualNumber;
+			ActualNumber = 0;
+			Added = false;
+			Subtracted = false;
+			Multiplied = true;
+			Divided = false;
+		}
+
 	}
 
 	void OnDivideClicked() {
-		Accumulator = ActualNumber;
-		ActualNumber = 0;
-		Added = false;
-		Subtracted = false;
-		Multiplied = false;
-		Divided = true;
+		if (Divided == true) {
+			Accumulator /= ActualNumber;
+			ActualNumber = Accumulator;
+			UpdateNumberDisplay();
+			ActualNumber = 0;
+			Add.interactable = false;
+			Multiply.interactable = false;
+			Minus.interactable = false;
+		} else {
+			Accumulator = ActualNumber;
+			ActualNumber = 0;
+			Added = false;
+			Subtracted = false;
+			Multiplied = false;
+			Divided = true;
+		}
 	}
 	
 	void OnEqualClicked() {
-		Debug.Log ("I AM EQUAL CLICKED");
-		Debug.Log (ActualNumber);
-		Debug.Log (Accumulator);
 		if (Added == true) {
 			ActualNumber += Accumulator;
 		} else if (Subtracted == true) {
@@ -169,6 +207,11 @@ public class DailyUI004 : DailyUIBase
 		}
 
 		UpdateNumberDisplay ();
+
+		Add.interactable = true;
+		Minus.interactable = true;
+		Multiply.interactable = true;
+		Divide.interactable = true;
 
 		Added = false;
 		Subtracted = false;
