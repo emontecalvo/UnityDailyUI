@@ -6,8 +6,8 @@ using DG.Tweening;
 public class DailyUI004 : DailyUIBase
 {
 	public Text NumberDisplay;
-	public int ActualNumber = 0;
-	public int Accumulator = 0;
+	public float ActualNumber = 0.0f;
+	public float Accumulator = 0.0f;
 	public Button Zero;
 	public Button One;
 	public Button Two;
@@ -50,6 +50,13 @@ public class DailyUI004 : DailyUIBase
 		Divide.onClick.AddListener (OnDivideClicked);
 		Equals.onClick.AddListener (OnEqualClicked);
 
+	}
+
+	void ActionsStop() {
+		Add.interactable = false;
+		Minus.interactable = false;
+		Multiply.interactable = false;
+		Divide.interactable = false;
 	}
 
 	void OnZeroClicked() {
@@ -117,80 +124,43 @@ public class DailyUI004 : DailyUIBase
 	}
 	
 	void OnAddClicked() {
-		if (Added == true) {
-			Accumulator += ActualNumber;
-			ActualNumber = Accumulator;
-			UpdateNumberDisplay();
-			ActualNumber = 0;
-			Minus.interactable = false;
-			Multiply.interactable = false;
-			Divide.interactable = false;
-		} else {
-			Accumulator = ActualNumber;
-			ActualNumber = 0;
-			Added = true;
-		}
+		Accumulator = ActualNumber;
+		ActualNumber = 0;
+		Added = true;
 		Subtracted = false;
 		Multiplied = false;
 		Divided = false;
+		ActionsStop ();
 	}
 
 	void OnMinusClicked() {
-		if (Subtracted == true) {
-			Accumulator -= ActualNumber;
-			ActualNumber = Accumulator;
-			UpdateNumberDisplay();
-			ActualNumber = 0;
-			Add.interactable = false;
-			Multiply.interactable = false;
-			Divide.interactable = false;
-		} else {
-			Accumulator = ActualNumber;
-			ActualNumber = 0;
-			Subtracted = true;
-		}
+		Accumulator = ActualNumber;
+		ActualNumber = 0;
+		Subtracted = true;
 		Added = false;
 		Multiplied = false;
 		Divided = false;
+		ActionsStop ();
 	}
 	
 	void OnMultiplyClicked() {
-		if (Multiplied == true) {
-			Accumulator *= ActualNumber;
-			ActualNumber = Accumulator;
-			UpdateNumberDisplay();
-			ActualNumber = 0;
-			Add.interactable = false;
-			Minus.interactable = false;
-			Divide.interactable = false;
-		} else {
-			Accumulator = ActualNumber;
-			ActualNumber = 0;
-			Added = false;
-			Subtracted = false;
-			Multiplied = true;
-			Divided = false;
-		}
-
+		Accumulator = ActualNumber;
+		ActualNumber = 0;
+		Added = false;
+		Subtracted = false;
+		Multiplied = true;
+		Divided = false;
+		ActionsStop ();
 	}
 
 	void OnDivideClicked() {
-		if (Divided == true) {
-			Accumulator /= ActualNumber;
-			ActualNumber = Accumulator;
-			UpdateNumberDisplay();
-			ActualNumber = 0;
-			Add.interactable = false;
-			Multiply.interactable = false;
-			Minus.interactable = false;
-		} else {
-			Accumulator = ActualNumber;
-			ActualNumber = 0;
-			Added = false;
-			Subtracted = false;
-			Multiplied = false;
-			Divided = true;
-		}
+		Accumulator = ActualNumber;
+		ActualNumber = 0;
+		Added = false;
+		Subtracted = false;
+		Multiplied = false;
+		Divided = true;
+		ActionsStop ();
 	}
 	
 	void OnEqualClicked() {
