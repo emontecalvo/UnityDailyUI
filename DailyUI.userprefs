@@ -1,23 +1,14 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DailyUI004.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UI-Shlinged.shader">
     <Files>
-      <File FileName="Assets/DailyUI004.cs" Line="163" Column="18" />
-      <File FileName="Assets/DailyUI002.cs" Line="1" Column="1" />
-      <File FileName="Assets/DailyUIBase.cs" Line="1" Column="1" />
-      <File FileName="Assets/DailyUIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/DailyUI001.cs" Line="1" Column="1" />
+      <File FileName="../MemoryGame/Assets/code/SymbolType.cs" Line="1" Column="1" />
+      <File FileName="../MemoryGame/Assets/code/SymbolDatabase.cs" Line="1" Column="1" />
+      <File FileName="Assets/DailyUI004.cs" Line="1" Column="1" />
       <File FileName="Assets/DailyUI003.cs" Line="1" Column="1" />
+      <File FileName="Assets/DailyUI005.cs" Line="6" Column="24" />
+      <File FileName="Assets/UI-Shlinged.shader" Line="101" Column="39" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="DailyUI004.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
