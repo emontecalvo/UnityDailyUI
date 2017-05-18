@@ -111,13 +111,9 @@ Shader "UI/Shlinged"
 				t = t % 5;
 				t = pow(t, 0.7);
 				p -= t;
-//				p += _Time.y * 0.7;
-//				p = p % 2;
 
 				float Shling = 0;
-//				if (p > 0.0 && p < 0.2){
-//					Shling = 0.3;
-//				}
+
 				Shling = pow(1 - saturate(abs(10 * (p - 0.1))), 1);
 				Shling *= 0.5;
 

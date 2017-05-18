@@ -46,15 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DailyUI001.cs" />
-     <Compile Include="Assets\DailyUI002.cs" />
-     <Compile Include="Assets\DailyUI003.cs" />
-     <Compile Include="Assets\DailyUI004.cs" />
-     <Compile Include="Assets\DailyUI005.cs" />
-     <Compile Include="Assets\DailyUIBase.cs" />
-     <Compile Include="Assets\DailyUIManager.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\code\DailyUI001.cs" />
+     <Compile Include="Assets\code\DailyUI002.cs" />
+     <Compile Include="Assets\code\DailyUI003.cs" />
+     <Compile Include="Assets\code\DailyUI004.cs" />
+     <Compile Include="Assets\code\DailyUI005.cs" />
+     <Compile Include="Assets\code\DailyUIBase.cs" />
+     <Compile Include="Assets\code\DailyUIManager.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\UI-Shlinged.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
