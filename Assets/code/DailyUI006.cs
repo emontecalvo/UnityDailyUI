@@ -8,7 +8,7 @@ public class DailyUI006 : DailyUIBase
 	public Text NumOfFollowers;
 	public Text FollowOrNot;
 	public Button Follow;
-	public float ActualNumber;
+	public long ActualNumber;
 
 	bool IsFollowing = false;
 
@@ -31,7 +31,7 @@ public class DailyUI006 : DailyUIBase
 	}
 
 	void UpdateDisplay(){
-		NumOfFollowers.text = ActualNumber.ToString();
+		NumOfFollowers.text = ActualNumber.ToString("N0");
 	}
 }
 

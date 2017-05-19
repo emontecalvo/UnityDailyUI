@@ -5,9 +5,9 @@
       <File FileName="../MemoryGame/Assets/code/SymbolType.cs" Line="1" Column="1" />
       <File FileName="../MemoryGame/Assets/code/SymbolDatabase.cs" Line="1" Column="1" />
       <File FileName="Assets/UI-Shlinged.shader" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI006.cs" Line="18" Column="2" />
-      <File FileName="Assets/code/DailyUI004.cs" Line="181" Column="1" />
-      <File FileName="Assets/code/DailyUI001.cs" Line="50" Column="1" />
+      <File FileName="Assets/code/DailyUI006.cs" Line="34" Column="50" />
+      <File FileName="Assets/code/DailyUI004.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/DailyUI001.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
