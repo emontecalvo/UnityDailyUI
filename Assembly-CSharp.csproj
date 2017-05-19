@@ -54,6 +54,7 @@
      <Compile Include="Assets\code\DailyUI004.cs" />
      <Compile Include="Assets\code\DailyUI005.cs" />
      <Compile Include="Assets\code\DailyUI006.cs" />
+     <Compile Include="Assets\code\DailyUI007.cs" />
      <Compile Include="Assets\code\DailyUIBase.cs" />
      <Compile Include="Assets\code\DailyUIManager.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
