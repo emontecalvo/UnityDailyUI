@@ -14,6 +14,7 @@ public class DailyUI007 : DailyUIBase
 	public Text DaysTxt;
 	public Text MoraleTxt;
 	public Text RandomEventsTxt;
+
 	const float TransitionTime = 3f;
 
 	void Start() {
@@ -40,27 +41,10 @@ public class DailyUI007 : DailyUIBase
 		float RandomEventsDestination = 0;
 		RandomEventsSlider.value = RandomEventsStart;
 
-
-
 		DOTween.To (() => VolumeSlider.value, x => VolumeSlider.value = x, VolumeDestination, TransitionTime);
 		DOTween.To (() => DaysSlider.value, x => DaysSlider.value = x, DaysDestination, TransitionTime);
 		DOTween.To (() => MoraleSlider.value, x => MoraleSlider.value = x, MoraleDestination, TransitionTime);
 		DOTween.To (() => RandomEventsSlider.value, x => RandomEventsSlider.value = x, RandomEventsDestination, TransitionTime);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	}
 
 	void OnVolumeChanged(float f) {
