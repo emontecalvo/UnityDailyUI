@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 
 public class DailyUI009 : DailyUIBase
@@ -16,6 +17,9 @@ public class DailyUI009 : DailyUIBase
 	public Sprite PauseImage;
 	public Sprite HeartEmpty;
 	public Sprite HeartFull;
+	public AudioSource MusicPlayer;
+	public List<AudioClip> ClipsList;
+	public int CurrentClip = 0;
 
 	bool PlayMusic = false;
 	bool HeartClickedBool = false;
@@ -23,6 +27,8 @@ public class DailyUI009 : DailyUIBase
 	void Start() {
 		PlayOrPauseBtn.onClick.AddListener (PlayPauseClicked);
 		HeartBtn.onClick.AddListener (HeartClicked);
+		MusicBarSlider.maxValue = ClipsList [CurrentClip].length;
+		MusicBarSlider.onValueChanged.AddListener (OnSkipAround);
 	
 	}
 
@@ -30,10 +36,13 @@ public class DailyUI009 : DailyUIBase
 		if (!PlayMusic) {
 			PlayMusic = true;
 			PlayOrPauseBtn.image.sprite = PlayImage;
+			MusicPlayer.Pause ();
 
 		} else {
 			PlayMusic = false;
 			PlayOrPauseBtn.image.sprite = PauseImage;
+			MusicPlayer.clip = ClipsList [CurrentClip];
+			MusicPlayer.Play ();
 		}
 	}
 
@@ -47,5 +56,14 @@ public class DailyUI009 : DailyUIBase
 		}
 	}
 
+	void OnSkipAround(float f){
+		MusicPlayer.time = f;
+	}
+
+	void Update() {
+		MusicBarSlider.value = MusicPlayer.time;
+		MusicPlayedTxt.text = MusicPlayer.time.ToString();
+		MusicLeftTxt.text = (ClipsList [CurrentClip].length - MusicPlayer.time).ToString();
+	}
 
 }
