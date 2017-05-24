@@ -17,6 +17,11 @@ public class DailyUI009 : DailyUIBase
 	public Sprite PauseImage;
 	public Sprite HeartEmpty;
 	public Sprite HeartFull;
+
+	public Sprite ZeroImg;
+	public Sprite OneImg;
+	public Sprite TwoImg;
+
 	public AudioSource MusicPlayer;
 	public List<AudioClip> ClipsList;
 	public int CurrentClip = 0;
@@ -29,6 +34,9 @@ public class DailyUI009 : DailyUIBase
 		HeartBtn.onClick.AddListener (HeartClicked);
 		MusicBarSlider.maxValue = ClipsList [CurrentClip].length;
 		MusicBarSlider.onValueChanged.AddListener (OnSkipAround);
+
+		PreviousSongBtn.onClick.AddListener (OnPreviousClicked);
+		NextSongBtn.onClick.AddListener (OnNextClicked);
 	
 	}
 
@@ -54,6 +62,32 @@ public class DailyUI009 : DailyUIBase
 			HeartBtn.image.sprite = HeartEmpty;
 			HeartClickedBool = false;
 		}
+	}
+
+	void OnPreviousClicked(){
+		MusicPlayer.Stop ();
+		if (CurrentClip == 0) {
+			CurrentClip = 2;
+		} else {
+			CurrentClip -= 1;
+		}
+		MusicPlayer.clip = ClipsList [CurrentClip];
+		MusicPlayer.time = 0;
+		MusicBarSlider.value = 0;
+		MusicPlayer.Play ();
+	}
+
+	void OnNextClicked() {
+		MusicPlayer.Stop ();
+		if (CurrentClip == 2) {
+			CurrentClip = 0;
+		} else {
+			CurrentClip += 1;
+		}
+		MusicPlayer.clip = ClipsList [CurrentClip];
+		MusicPlayer.time = 0;
+		MusicBarSlider.value = 0;
+		MusicPlayer.Play ();
 	}
 
 	void OnSkipAround(float f){
