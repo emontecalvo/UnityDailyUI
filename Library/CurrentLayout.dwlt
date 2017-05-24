@@ -418,24 +418,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 212}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e0240000ea2400002625000050250000522500005425000058250000782500008a250000c0250000c425000072260000ce2800005c2900000a2a0000142a0000202a0000302a00004a2a00005c2a00005e2a0000662a0000702a00008a2a00009a2a0000b22a0000bc2a0000d82a0000da2a0000ec2a0000fa2a00007a2c0000822c0000
+    m_ExpandedIDs: 00000000e0240000ea2400002625000050250000522500005425000058250000782500008a250000c0250000c4250000022600000e26000072260000ce2800005c2900000a2a0000142a0000202a0000302a00004a2a00005c2a00005e2a0000662a0000702a00008a2a00009a2a0000b22a0000bc2a0000d82a0000da2a0000ec2a0000fa2a00007a2c0000822c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: DailyUI009
-      m_OriginalName: DailyUI009
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 1552
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -653,10 +653,10 @@ MonoBehaviour:
     width: 230
     height: 266
   m_TreeViewState:
-    scrollPos: {x: 0, y: 55}
-    m_SelectedIDs: 6afaffff
-    m_LastClickedID: -1430
-    m_ExpandedIDs: 68faffff6afaffffe2fbffff0000000098260000aa260000ec260000
+    scrollPos: {x: 0, y: 102.3111}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 5afaffff68faffff6afaffffe2fbffff0000000098260000aa260000ec260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

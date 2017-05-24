@@ -18,12 +18,13 @@ public class DailyUI009 : DailyUIBase
 	public Sprite HeartEmpty;
 	public Sprite HeartFull;
 
-	public Sprite ZeroImg;
-	public Sprite OneImg;
-	public Sprite TwoImg;
+	public Image CurrentImg;
+	public Image PreviousImg;
+	public Image NextImg;
 
 	public AudioSource MusicPlayer;
 	public List<AudioClip> ClipsList;
+	public List<Sprite> CoverImgList;
 	public int CurrentClip = 0;
 
 	bool PlayMusic = false;
@@ -71,6 +72,19 @@ public class DailyUI009 : DailyUIBase
 		} else {
 			CurrentClip -= 1;
 		}
+		CurrentImg.sprite = CoverImgList [CurrentClip];
+		if (CurrentClip == 2) {
+			NextImg.sprite = CoverImgList [0];
+		} else {
+			NextImg.sprite = CoverImgList [CurrentClip + 1];
+		}
+		if (CurrentClip == 0) {
+			PreviousImg.sprite = CoverImgList [2];
+		} else {
+			PreviousImg.sprite = CoverImgList [CurrentClip - 1];
+		}
+
+
 		MusicPlayer.clip = ClipsList [CurrentClip];
 		MusicPlayer.time = 0;
 		MusicBarSlider.value = 0;
@@ -83,6 +97,17 @@ public class DailyUI009 : DailyUIBase
 			CurrentClip = 0;
 		} else {
 			CurrentClip += 1;
+		}
+		CurrentImg.sprite = CoverImgList [CurrentClip];
+		if (CurrentClip == 2) {
+			NextImg.sprite = CoverImgList [0];
+		} else {
+			NextImg.sprite = CoverImgList [CurrentClip + 1];
+		}
+		if (CurrentClip == 0) {
+			PreviousImg.sprite = CoverImgList [2];
+		} else {
+			PreviousImg.sprite = CoverImgList [CurrentClip - 1];
 		}
 		MusicPlayer.clip = ClipsList [CurrentClip];
 		MusicPlayer.time = 0;
