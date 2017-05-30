@@ -11,12 +11,20 @@ public class DailyUI012 : DailyUIBase
 	public Image BackgroundImage;
 	public CanvasGroup BuyFrameCG;
 	public CanvasGroup CheckoutFrame;
+
+	public Button PlusBtn;
+	public Button MinusBtn;
+	public Text TotalTxt;
+	int TotalNum = 129;
+
 	const float TransitionTime = 1f;
 	// Use this for initialization
 	void Start () {
 
 		CheckoutFrame.gameObject.SetActive (false);
 		BuyButton.onClick.AddListener (onClick);
+		PlusBtn.onClick.AddListener (onPlusClicked);
+		MinusBtn.onClick.AddListener (onMinusClicked);
 
 
 		Vector3 dest = FrameRT.localPosition;
@@ -32,9 +40,8 @@ public class DailyUI012 : DailyUIBase
 		DOTween.To (() => BackgroundImage.color, x => BackgroundImage.color = x, DestColor, TransitionTime);
 	}
 
-	// Update is called once per frame
-	void Update () {
-
+	void UpdateTotalDisplay() {
+		TotalTxt.text = "$" + TotalNum.ToString();
 	}
 
 	void onClick() {
@@ -45,5 +52,19 @@ public class DailyUI012 : DailyUIBase
 
 		BuyFrameCG.gameObject.SetActive (true);
 
+	}
+
+	void onPlusClicked(){
+		TotalNum += 129;
+		UpdateTotalDisplay ();
+	}
+
+	void onMinusClicked(){
+		if (TotalNum > 0) {
+			TotalNum -= 129;
+		} else {
+			TotalNum = 0;
+		}
+		UpdateTotalDisplay ();
 	}
 }
