@@ -62,6 +62,7 @@ public class DailyUI013 : DailyUIBase
 	bool MessageNotSend = true;
 	const float TransitionTime = 1f;
 	public CanvasGroup TypingFrame;
+	public CanvasGroup NewTextFrame;
 
 	void Start(){
 		SendMsgBtn.onClick.AddListener (MsgOrSendClicked);
@@ -71,10 +72,12 @@ public class DailyUI013 : DailyUIBase
 
 	void HBtnClicked() {
 		TypingTextDisplay.text += "h";
+		SentTextDisplay.text = TypingTextDisplay.text;
 	}
 
 	void IBtnClicked() {
 		TypingTextDisplay.text += "i";
+		SentTextDisplay.text = TypingTextDisplay.text;
 	}
 
 	void MsgOrSendClicked () {
@@ -87,6 +90,8 @@ public class DailyUI013 : DailyUIBase
 			SendMsgBtnText.text = "tap to message";
 			MessageNotSend = true;
 			DOTween.To (() => TypingFrame.alpha, x => TypingFrame.alpha = x, 0, TransitionTime);
+			DOTween.To (() => NewTextFrame.alpha, x => NewTextFrame.alpha = x, 1, TransitionTime);
+
 		}
 	}
 
