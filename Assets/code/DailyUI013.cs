@@ -60,20 +60,33 @@ public class DailyUI013 : DailyUIBase
 	public Button SpaceBtn;
 
 	bool MessageNotSend = true;
-
+	const float TransitionTime = 1f;
+	public CanvasGroup TypingFrame;
 
 	void Start(){
 		SendMsgBtn.onClick.AddListener (MsgOrSendClicked);
+		HBtn.onClick.AddListener (HBtnClicked);
+		IBtn.onClick.AddListener (IBtnClicked);
 	}
 
+	void HBtnClicked() {
+		TypingTextDisplay.text += "h";
+	}
+
+	void IBtnClicked() {
+		TypingTextDisplay.text += "i";
+	}
 
 	void MsgOrSendClicked () {
+		TypingTextDisplay.text = "";
 		if (MessageNotSend) {
 			SendMsgBtnText.text = "send";
 			MessageNotSend = false;
+			DOTween.To (() => TypingFrame.alpha, x => TypingFrame.alpha = x, 1, TransitionTime);
 		} else {
 			SendMsgBtnText.text = "tap to message";
 			MessageNotSend = true;
+			DOTween.To (() => TypingFrame.alpha, x => TypingFrame.alpha = x, 0, TransitionTime);
 		}
 	}
 
