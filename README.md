@@ -16,7 +16,7 @@ https://unity3d.com/unity
 ### Development Roadmap
 
  - [] Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
- 	- [] Days 1-10
+ 	- [x] Days 1-10
  	- [] Days 11-20
  	- [] Days 21-30
  	- [] Days 31-40
