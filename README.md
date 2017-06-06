@@ -57,8 +57,7 @@ To play through the "days" using the previous/next buttons, you need to de-activ
 				├── DailyUI011			"Flash Error-Success"
 				├── DailyUI012			"Shopping"
 				├── DailyUI013			"Direct Messaging"
-				├── DailyUI014			"Countdown Timer"
-				... etc
+				├── DailyUI014			"Countdown Timer"... etc...
 			|── GameObject      
 
 ```
