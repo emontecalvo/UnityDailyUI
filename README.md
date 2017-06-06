@@ -13,6 +13,34 @@ About 3/4 of the way through creating 15-minute designs in Sketch (some I loved,
 If this project is something you would like to see on your local machine as it currently stands, please install Unity:
 https://unity3d.com/unity
 
+To play through the "days" using the previous/next buttons, you need to de-activate whichever DAILYUI (DAILYUI002 or DAILYUI014, etc) is currently highlighted in the Envelope hierarchy, and in the DailyUIManager ensure that "Daily UI Manager" C# script is active / checked.
+
+### Hierarchy
+.
+
+├── Main Camera
+├── EventSystem
+├── Canvas
+│   ├── DailyUIManager  		Controller for scrolling through the DailyUI's
+│   	├── Envelope  				Main Container for the DailyUI's
+				├── DailyUI001			"Sign-up"
+				├── DailyUI002			"Checkout"
+				├── DailyUI003			"Landing Page"
+				├── DailyUI004			"Calculator"
+				├── DailyUI005			"App Icon"
+				├── DailyUI006			"User Profile"
+				├── DailyUI007			"Settings"
+				├── DailyUI008			"404 page"
+				├── DailyUI009			"Music Player"
+				├── DailyUI010			"Social Share"
+				├── DailyUI011			"Flash Error-Success"
+				├── DailyUI012			"Shopping"
+				├── DailyUI013			"Direct Messaging"
+				├── DailyUI014			"Countdown Timer"
+				... etc
+			|── GameObject      
+
+
 ### Development Roadmap
 
  - [] Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
@@ -27,6 +55,7 @@ https://unity3d.com/unity
  	- [] Days 81-90
  	- [] Days 91-100
  - [] Continue to refactor the code as patterns emerge
+ - [] Re-design the previous/next buttons
  - [] Once Day 100 is completed, deploy to the Android store
  - [] Deploy live to the web
 
