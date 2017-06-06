@@ -42,23 +42,23 @@ To play through the "days" using the previous/next buttons, you need to de-activ
 ├── Main Camera
 ├── EventSystem
 ├── Canvas
-│   ├── DailyUIManager  		Controller for scrolling through the DailyUI's
-│   	├── Envelope  				Main Container for the DailyUI's
-				├── DailyUI001			"Sign-up"
-				├── DailyUI002			"Checkout"
-				├── DailyUI003			"Landing Page"
-				├── DailyUI004			"Calculator"
-				├── DailyUI005			"App Icon"
-				├── DailyUI006			"User Profile"
-				├── DailyUI007			"Settings"
-				├── DailyUI008			"404 page"
-				├── DailyUI009			"Music Player"
-				├── DailyUI010			"Social Share"
-				├── DailyUI011			"Flash Error-Success"
-				├── DailyUI012			"Shopping"
-				├── DailyUI013			"Direct Messaging"
-				├── DailyUI014			"Countdown Timer"... etc...
-			|── GameObject      
+	├── DailyUIManager  		Controller for scrolling through the DailyUI's
+	│	├── Envelope  				Main Container for the DailyUI's
+	│		├── DailyUI001			"Sign-up"
+	│		├── DailyUI002			"Checkout"
+	│		├── DailyUI003			"Landing Page"
+	│		├── DailyUI004			"Calculator"
+	│		├── DailyUI005			"App Icon"
+	│		├── DailyUI006			"User Profile"
+	│		├── DailyUI007			"Settings"
+	│		├── DailyUI008			"404 page"
+	│		├── DailyUI009			"Music Player"
+	│		├── DailyUI010			"Social Share"
+	│		├── DailyUI011			"Flash Error-Success"
+	│		├── DailyUI012			"Shopping"
+	│		├── DailyUI013			"Direct Messaging"
+	│		├── DailyUI014			"Countdown Timer"... etc...
+	│	|── GameObject      
 
 ```
 
