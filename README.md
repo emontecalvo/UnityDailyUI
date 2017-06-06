@@ -15,7 +15,28 @@ https://unity3d.com/unity
 
 To play through the "days" using the previous/next buttons, you need to de-activate whichever DAILYUI (DAILYUI002 or DAILYUI014, etc) is currently highlighted in the Envelope hierarchy, and in the DailyUIManager ensure that "Daily UI Manager" C# script is active / checked.
 
-### Hierarchy
+### Development Roadmap
+
+ - [] Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
+ 	- [x] Days 1-10
+ 	- [] Days 11-20
+ 	- [] Days 21-30
+ 	- [] Days 31-40
+ 	- [] Days 41-50
+ 	- [] Days 51-60
+ 	- [] Days 61-70
+ 	- [] Days 71-80
+ 	- [] Days 81-90
+ 	- [] Days 91-100
+ - [] Continue to refactor the code as patterns emerge
+ - [] Re-design the previous/next buttons
+ - [] Once Day 100 is completed, deploy to the Android store
+ - [] Deploy live to the web
+
+
+ #### Hierarchy / Layout
+
+```
 .
 
 ├── Main Camera
@@ -40,24 +61,7 @@ To play through the "days" using the previous/next buttons, you need to de-activ
 				... etc
 			|── GameObject      
 
-
-### Development Roadmap
-
- - [] Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
- 	- [x] Days 1-10
- 	- [] Days 11-20
- 	- [] Days 21-30
- 	- [] Days 31-40
- 	- [] Days 41-50
- 	- [] Days 51-60
- 	- [] Days 61-70
- 	- [] Days 71-80
- 	- [] Days 81-90
- 	- [] Days 91-100
- - [] Continue to refactor the code as patterns emerge
- - [] Re-design the previous/next buttons
- - [] Once Day 100 is completed, deploy to the Android store
- - [] Deploy live to the web
+```
 
 
  *Thanks for reading*
