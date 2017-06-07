@@ -7,15 +7,11 @@ public class DailyUI016 : DailyUIBase
 {
 	public RectTransform ThankYouRT;
 	public Image BackgroundImage;
-
 	public Button CloseButton;
-
-
 	public CanvasGroup ThankYouFrameCG;
 	public CanvasGroup ElwoodLovesYouFrame;
 
-	const float TransitionTime = 2f;
-
+	const float TransitionTime = 1.25f;
 
 	void Start () {
 		CloseButton.onClick.AddListener (onCloseClicked);
