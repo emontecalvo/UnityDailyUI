@@ -7,10 +7,6 @@ using DG.Tweening;
 public class DailyUI014 : DailyUIBase
 {
 	public CanvasGroup FullCloudCG;
-	public CanvasGroup ThreeQuarterCloudCG;
-	public CanvasGroup HalfCloudCG;
-	public CanvasGroup QuarterCloudCG;
-	public CanvasGroup EmptyCloudCG;
 
 	public CanvasGroup UmbrellaOneCG;
 	public CanvasGroup UmbrellaTwoCG;
@@ -21,62 +17,71 @@ public class DailyUI014 : DailyUIBase
 	public CanvasGroup DarkBackgroundCG;
 	public CanvasGroup LightBackgroundCG;
 
+	public Image CloudOfRain;
+
 	public Text MinuteTxt;
 	public Text DecaSecondsTxt;
 	public Text OnesSecondsTxt;
+	int RemainingSeconds = 2;
 
 	public int EnableTime = 0;
-	public int CountdownTime = 120;
+	public int CountdownTime = 65;
 
 	const float TransitionTime = 2f;
 	const float UmbrellaTransitionTime = 1.7f;
 
+	bool CloudEmpty = false;
+
 	void Start(){
-		ThreeQuarterFadeIn ();
+		UmbrellaTwoFadeIn ();
 	}
 
-	void ThreeQuarterFadeIn (){
-		DOTween.To (() => FullCloudCG.alpha, x => FullCloudCG.alpha = x, 0, TransitionTime);
+	void UmbrellaTwoFadeIn (){
 		DOTween.To (() => UmbrellaOneCG.alpha, x => UmbrellaOneCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => UmbrellaTwoCG.alpha, x => UmbrellaTwoCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => ThreeQuarterCloudCG.alpha, x => ThreeQuarterCloudCG.alpha = x, 1, TransitionTime).OnComplete(HalfFadeIn);
+		if (!CloudEmpty) {
+			DOTween.To (() => UmbrellaTwoCG.alpha, x => UmbrellaTwoCG.alpha = x, 1, UmbrellaTransitionTime).OnComplete (UmbrellaThreeFadeIn);
+		} else {
+			DOTween.To (() => UmbrellaOneCG.alpha, x => UmbrellaOneCG.alpha = x, 0, UmbrellaTransitionTime);
+			RainOrShineFadeIn ();
+		}
 	}
 
-	void HalfFadeIn(){
-		DOTween.To (() => ThreeQuarterCloudCG.alpha, x => ThreeQuarterCloudCG.alpha = x, 0, TransitionTime);
+	void UmbrellaThreeFadeIn(){
 		DOTween.To (() => UmbrellaTwoCG.alpha, x => UmbrellaTwoCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => UmbrellaThreeCG.alpha, x => UmbrellaThreeCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => HalfCloudCG.alpha, x => HalfCloudCG.alpha = x, 1, TransitionTime).OnComplete(QuarterFadeIn);
+		if (!CloudEmpty) {
+			DOTween.To (() => UmbrellaThreeCG.alpha, x => UmbrellaThreeCG.alpha = x, 1, UmbrellaTransitionTime).OnComplete (UmbrellaFourFadeIn);
+		} else {
+			RainOrShineFadeIn ();
+		}
 	}
 
-	void QuarterFadeIn(){
-		DOTween.To (() => HalfCloudCG.alpha, x => HalfCloudCG.alpha = x, 0, TransitionTime);
+	void UmbrellaFourFadeIn(){
 		DOTween.To (() => UmbrellaThreeCG.alpha, x => UmbrellaThreeCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => UmbrellaFourCG.alpha, x => UmbrellaFourCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => QuarterCloudCG.alpha, x => QuarterCloudCG.alpha = x, 1, TransitionTime).OnComplete(EmptyFadeIn);
+		if (!CloudEmpty) {
+			DOTween.To (() => UmbrellaFourCG.alpha, x => UmbrellaFourCG.alpha = x, 1, UmbrellaTransitionTime).OnComplete (RainOrShineFadeIn);
+		} else {
+			RainOrShineFadeIn ();
+		}
 	}
 
-	void EmptyFadeIn(){
-		DOTween.To (() => QuarterCloudCG.alpha, x => QuarterCloudCG.alpha = x, 0, TransitionTime);
-		DOTween.To (() => UmbrellaFourCG.alpha, x => UmbrellaFourCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => UmbrellaFiveCG.alpha, x => UmbrellaFiveCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => DarkBackgroundCG.alpha, x => DarkBackgroundCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => LightBackgroundCG.alpha, x => LightBackgroundCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => EmptyCloudCG.alpha, x => EmptyCloudCG.alpha = x, 1, TransitionTime).OnComplete(FullFadeIn);
-	}
-
-	void FullFadeIn(){
-		DOTween.To (() => EmptyCloudCG.alpha, x => EmptyCloudCG.alpha = x, 0, TransitionTime);
-		DOTween.To (() => UmbrellaFiveCG.alpha, x => UmbrellaFiveCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => UmbrellaOneCG.alpha, x => UmbrellaOneCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => LightBackgroundCG.alpha, x => LightBackgroundCG.alpha = x, 0, UmbrellaTransitionTime);
-		DOTween.To (() => DarkBackgroundCG.alpha, x => DarkBackgroundCG.alpha = x, 1, UmbrellaTransitionTime);
-		DOTween.To (() => FullCloudCG.alpha, x => FullCloudCG.alpha = x, 1, TransitionTime).OnComplete(ThreeQuarterFadeIn);
+	void RainOrShineFadeIn(){
+		if (CloudEmpty) {
+			DOTween.To (() => UmbrellaFourCG.alpha, x => UmbrellaFourCG.alpha = x, 0, UmbrellaTransitionTime);
+			DOTween.To (() => UmbrellaFiveCG.alpha, x => UmbrellaFiveCG.alpha = x, 1, UmbrellaTransitionTime);
+			DOTween.To (() => DarkBackgroundCG.alpha, x => DarkBackgroundCG.alpha = x, 0, UmbrellaTransitionTime);
+			DOTween.To (() => LightBackgroundCG.alpha, x => LightBackgroundCG.alpha = x, 1, UmbrellaTransitionTime);
+		} else {
+			DOTween.To (() => UmbrellaFourCG.alpha, x => UmbrellaFourCG.alpha = x, 0, UmbrellaTransitionTime);
+			DOTween.To (() => UmbrellaOneCG.alpha, x => UmbrellaOneCG.alpha = x, 1, UmbrellaTransitionTime).OnComplete(UmbrellaTwoFadeIn);
+		}
 	}
 
 	void Update() {
-		ShowCountdown ();
-		Debug.Log (Time.time.ToString () + " dt:" + Time.deltaTime.ToString());
+		if (RemainingSeconds != 0) {
+			ShowCountdown ();
+			CloudOfRain.fillAmount -= 1.0f / CountdownTime * Time.deltaTime;
+		}
+//		Debug.Log (Time.time.ToString () + " dt:" + Time.deltaTime.ToString());
 	}
 
 	// OnEnable = built-in Unity function, just like Update
@@ -88,14 +93,18 @@ public class DailyUI014 : DailyUIBase
 	void ShowCountdown() {
 		int currentTime = (int)Time.time;
 		int timePassed = currentTime - EnableTime;
-		int remainingSeconds = CountdownTime - timePassed;
+		RemainingSeconds = CountdownTime - timePassed;
 
-		int minuteInt = remainingSeconds / 60;
-		int deciInt = remainingSeconds % 60 / 10;
-		int secondInt = remainingSeconds % 10;
+		int minuteInt = RemainingSeconds / 60;
+		int deciInt = RemainingSeconds % 60 / 10;
+		int secondInt = RemainingSeconds % 10;
 
 		MinuteTxt.text = minuteInt.ToString ();
 		DecaSecondsTxt.text = deciInt.ToString ();
 		OnesSecondsTxt.text = secondInt.ToString ();
+
+		if (RemainingSeconds == 1 || RemainingSeconds == 0) {
+			CloudEmpty = true;
+		}
 	}
 }
