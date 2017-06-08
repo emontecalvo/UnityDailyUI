@@ -21,9 +21,16 @@ public class DailyUI014 : DailyUIBase
 	public CanvasGroup DarkBackgroundCG;
 	public CanvasGroup LightBackgroundCG;
 
+	public Text MinuteTxt;
+	public Text DecaSecondsTxt;
+	public Text OnesSecondsTxt;
+
+	public int EnableTime = 0;
+	public int CountdownTime = 120;
+
 	const float TransitionTime = 2f;
 	const float UmbrellaTransitionTime = 1.7f;
-//
+
 	void Start(){
 		ThreeQuarterFadeIn ();
 	}
@@ -67,4 +74,28 @@ public class DailyUI014 : DailyUIBase
 		DOTween.To (() => FullCloudCG.alpha, x => FullCloudCG.alpha = x, 1, TransitionTime).OnComplete(ThreeQuarterFadeIn);
 	}
 
+	void Update() {
+		ShowCountdown ();
+		Debug.Log (Time.time.ToString () + " dt:" + Time.deltaTime.ToString());
+	}
+
+	// OnEnable = built-in Unity function, just like Update
+	// OnEnable gets called only when this component is actually active in the scene
+	void OnEnable() {
+		EnableTime = (int)Time.time;
+	}
+
+	void ShowCountdown() {
+		int currentTime = (int)Time.time;
+		int timePassed = currentTime - EnableTime;
+		int remainingSeconds = CountdownTime - timePassed;
+
+		int minuteInt = remainingSeconds / 60;
+		int deciInt = remainingSeconds % 60 / 10;
+		int secondInt = remainingSeconds % 10;
+
+		MinuteTxt.text = minuteInt.ToString ();
+		DecaSecondsTxt.text = deciInt.ToString ();
+		OnesSecondsTxt.text = secondInt.ToString ();
+	}
 }
