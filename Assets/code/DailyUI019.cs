@@ -14,6 +14,8 @@ public class DailyUI019 : DailyUIBase
 	public CanvasGroup Panel3;
 	public CanvasGroup Panel4;
 
+	AudioSource MusicPlayer;
+
 	const float TransitionTime = 1f;
 
 	// Use this for initialization
@@ -26,6 +28,7 @@ public class DailyUI019 : DailyUIBase
 
 		Frame1RT.localPosition = start;
 		DOTween.To (() => Frame1RT.localPosition, x => Frame1RT.localPosition = x, dest, TransitionTime).OnComplete(OnSecondFrame);
+		MusicPlayer.Play ();
 	}
 
 	void OnSecondFrame(){
