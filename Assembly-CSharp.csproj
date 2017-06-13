@@ -65,6 +65,7 @@
      <Compile Include="Assets\code\DailyUI015.cs" />
      <Compile Include="Assets\code\DailyUI016.cs" />
      <Compile Include="Assets\code\DailyUI017.cs" />
+     <Compile Include="Assets\code\DailyUI018.cs" />
      <Compile Include="Assets\code\DailyUI019.cs" />
      <Compile Include="Assets\code\DailyUI021.cs" />
      <Compile Include="Assets\code\DailyUIBase.cs" />
