@@ -10,7 +10,11 @@ public class DailyUI021 : DailyUIBase
 	public Slider HomeTempSlider;
 	public Text TemperatureText;
 
+	public RectTransform CircleSlider;
+
 	const float TransitionTime = 5f;
+
+	public AnimationCurve TempToYOffset = new AnimationCurve();
 
 	void Start(){
 		SliderFadeIn ();
@@ -21,7 +25,9 @@ public class DailyUI021 : DailyUIBase
 		DOTween.To (() => SliderPanelCG.alpha, x => SliderPanelCG.alpha = x, 1, TransitionTime);
 	}
 
-	void OnTempChanged (float f) {
-		TemperatureText.text = f.ToString();
+	void OnTempChanged (float temp) {
+		float yOffset = TempToYOffset.Evaluate (temp);
+		TemperatureText.text = temp.ToString();
+		CircleSlider.localPosition = new Vector3 (0, yOffset, 0);
 	}
 }

@@ -63,6 +63,10 @@ To play through the "days" using the previous/next buttons, you need to de-activ
 ```
 
 
- *Thanks for reading*
+ *Thanks for reading!*
  
  ~ Emily
+
+  P.S.  Feel free to also checkout my DailyUI project built with ReactJS:
+ * Github repo:  https://github.com/emontecalvo/ReactDailyUI
+ * Live site:  coming soon
