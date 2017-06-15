@@ -19,7 +19,7 @@ To play through the "days" using the previous/next buttons, you need to de-activ
 
  - [] Continue to do at least one Daily UI in Unity per weekday until Day 100 is reached
  	- [x] Days 1-10
- 	- [] Days 11-20
+ 	- [x] Days 11-20
  	- [] Days 21-30
  	- [] Days 31-40
  	- [] Days 41-50
@@ -57,7 +57,14 @@ To play through the "days" using the previous/next buttons, you need to de-activ
 	│		├── DailyUI011			"Flash Error-Success"
 	│		├── DailyUI012			"Shopping"
 	│		├── DailyUI013			"Direct Messaging"
-	│		├── DailyUI014			"Countdown Timer"... etc...
+	│		├── DailyUI014			"Countdown Timer"
+	│		├── DailyUI015			"On/Off Switch"
+	│		├── DailyUI016			"Pop-up"
+	│		├── DailyUI017			"Email-Receipt"
+	│		├── DailyUI018			"Analytics"
+	│		├── DailyUI019			"Leaderboard"
+	│		├── DailyUI020			"Location Tracker"
+	│		├── DailyUI021			"Home Monitor"....etc...
 	│	|── GameObject      
 
 ```
