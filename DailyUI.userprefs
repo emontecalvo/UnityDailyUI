@@ -5,18 +5,9 @@
       <File FileName="../MemoryGame/Assets/code/SymbolType.cs" Line="1" Column="1" />
       <File FileName="../MemoryGame/Assets/code/SymbolDatabase.cs" Line="1" Column="1" />
       <File FileName="Assets/UI-Shlinged.shader" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI015.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/DailyUI022.cs" Line="55" Column="1" />
+      <File FileName="Assets/code/DailyUI004.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI001.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI017.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI014.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI019.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI009.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI011.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI021.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI007.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI018.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI020.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI022.cs" Line="8" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
