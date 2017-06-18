@@ -36,15 +36,11 @@ public class DailyUI022 : DailyUIBase
 			ResultTwoTxt.text = SearchTxt.text;
 			ResultThreeTxt.text = SearchTxt.text;
 		}
-	}
-
-	void OnGUI() {
-		Event e = Event.current;
-		if (e.keyCode == KeyCode.Return) {
-			OnSearchClicked ();
+		if (Input.GetKeyDown(KeyCode.Return)) {
+			OnSearchClicked();
 		}
 	}
-
+		
 	void OnSearchClicked() {
 		SearchClicked = true;
 		ResultOneTxt.text = (SearchTxt.text + " people");
