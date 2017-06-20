@@ -5,48 +5,86 @@ using DG.Tweening;
 
 public class DailyUI023 : DailyUIBase 
 {
-//	public RectTransform FrameRT;
-//	public InputField NameIF;
-//	public InputField EmailIF;
-//	public Button SubmitButton;
-//	public Image BackgroundImage;
-//	public CanvasGroup FrameCG;
-//	public CanvasGroup TYFrame;
-//	const float TransitionTime = 1f;
-//
-//	void Start () {
-//
-//		TYFrame.gameObject.SetActive (false);
-//		SubmitButton.onClick.AddListener (onClick);
-//
-//
-//
-//		Vector3 dest = FrameRT.localPosition;
-//		Vector3 start = dest + new Vector3 (-500, 0, 0);
-//
-//		FrameRT.localPosition = start;
-//		DOTween.To (() => FrameRT.localPosition, x => FrameRT.localPosition = x, dest, TransitionTime);
-//
-//		Color DestColor = BackgroundImage.color;
-//		Color StartColor = DestColor;
-//		StartColor.a = 0;
-//		BackgroundImage.color = StartColor;
-//		DOTween.To (() => BackgroundImage.color, x => BackgroundImage.color = x, DestColor, TransitionTime);
-//	}
-//
-//
-//	void Update () {
-//
-//	}
-//
-//	void onClick() {
-//		TYFrame.gameObject.SetActive (true);
-//		Debug.LogFormat ("I am clicked {0}{1}", NameIF.text, EmailIF.text);
-//
-//		DOTween.To (() => FrameCG.alpha, x => FrameCG.alpha = x, 0, TransitionTime);
-//		DOTween.To (() => TYFrame.alpha, x => TYFrame.alpha = x, 1, TransitionTime);
-//
-//		FrameCG.gameObject.SetActive (true);
-//
-//	}
+
+	public RectTransform Frame1RT;
+
+	public CanvasGroup Frame1CG;
+	public CanvasGroup Frame2CG;
+	public CanvasGroup Frame3CG;
+	public CanvasGroup CirclePanelCG;
+
+	public Sprite BlackCircle;
+	public Sprite ColorCircle;
+
+	public Button CloseBtn;
+
+	public Button CircleOne;
+	public Button CircleTwo;
+	public Button CircleThree;
+
+	public Image BackgroundImage;
+
+	const float TransitionTime = 1f;
+	const float TransitionTimeSlow = 4f;
+
+	void Start () {
+
+		CircleOne.onClick.AddListener (showFrameOne);
+		CircleTwo.onClick.AddListener (showFrameTwo);
+		CircleThree.onClick.AddListener (showFrameThree);
+		CloseBtn.onClick.AddListener (onCloseClicked);
+
+		Frame1RT.gameObject.SetActive (true);
+
+
+		Vector3 dest = Frame1RT.localPosition;
+		Vector3 start = dest + new Vector3 (-500, 0, 0);
+		Frame1RT.localPosition = start;
+		DOTween.To (() => Frame1RT.localPosition, x => Frame1RT.localPosition = x, dest, TransitionTime);
+
+		Color DestColor = BackgroundImage.color;
+		Color StartColor = DestColor;
+		StartColor.a = 0;
+		BackgroundImage.color = StartColor;
+		DOTween.To (() => BackgroundImage.color, x => BackgroundImage.color = x, DestColor, TransitionTime);
+
+		DOTween.To (() => CirclePanelCG.alpha, x => CirclePanelCG.alpha = x, 1, TransitionTimeSlow);
+	}
+
+	void showFrameOne() {
+		Frame1RT.gameObject.SetActive (true);
+
+		DOTween.To (() => Frame1CG.alpha, x => Frame1CG.alpha = x, 1, TransitionTime);
+		DOTween.To (() => Frame2CG.alpha, x => Frame2CG.alpha = x, 0, TransitionTime);
+		DOTween.To (() => Frame3CG.alpha, x => Frame3CG.alpha = x, 0, TransitionTime);
+
+		CircleOne.GetComponent<Image> ().sprite = BlackCircle;
+		CircleTwo.GetComponent<Image> ().sprite = ColorCircle;
+		CircleThree.GetComponent<Image> ().sprite = ColorCircle;
+	}
+
+	void showFrameTwo() {
+		DOTween.To (() => Frame1CG.alpha, x => Frame1CG.alpha = x, 0, TransitionTime);
+		DOTween.To (() => Frame2CG.alpha, x => Frame2CG.alpha = x, 1, TransitionTime);
+		DOTween.To (() => Frame3CG.alpha, x => Frame3CG.alpha = x, 0, TransitionTime);
+	
+		CircleOne.GetComponent<Image> ().sprite = ColorCircle;
+		CircleTwo.GetComponent<Image> ().sprite = BlackCircle;
+		CircleThree.GetComponent<Image> ().sprite = ColorCircle;
+	}
+
+	void showFrameThree() {
+		DOTween.To (() => Frame1CG.alpha, x => Frame1CG.alpha = x, 0, TransitionTime);
+		DOTween.To (() => Frame2CG.alpha, x => Frame2CG.alpha = x, 0, TransitionTime);
+		DOTween.To (() => Frame3CG.alpha, x => Frame3CG.alpha = x, 1, TransitionTime);
+
+		CircleOne.GetComponent<Image> ().sprite = ColorCircle;
+		CircleTwo.GetComponent<Image> ().sprite = ColorCircle;
+		CircleThree.GetComponent<Image> ().sprite = BlackCircle;
+	}
+
+	void onCloseClicked() {
+		DOTween.To (() => Frame3CG.alpha, x => Frame3CG.alpha = x, 0, TransitionTime);
+		DOTween.To (() => CirclePanelCG.alpha, x => CirclePanelCG.alpha = x, 0, TransitionTime);
+	}
 }
