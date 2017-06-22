@@ -9,6 +9,11 @@ Originally I started the Daily UI project using only Sketch and limited myself t
 
 About 3/4 of the way through creating 15-minute designs in Sketch (some I loved, some not so much), I wanted to make these interactable.  Looking for a way to practice my C# and Unity skills, this seemed like a good challenge and with 100 UI's, the project will be a substantial UI library.
 
+### Demo Site
+This project is intended for mobile, so the desktop experience was built using WebGL:
+
+http://chaosfrolic.s3-website-us-west-1.amazonaws.com/dailyui/index.html
+
 ### Setup
 If this project is something you would like to see on your local machine as it currently stands, please install Unity:
 https://unity3d.com/unity
@@ -31,7 +36,7 @@ To play through the "days" using the previous/next buttons, you need to de-activ
  - [] Continue to refactor the code as patterns emerge
  - [] Re-design the previous/next buttons
  - [] Once Day 100 is completed, deploy to the Android store
- - [] Deploy live to the web
+ - [x] Deploy demo site to the web
 
 
  #### Hierarchy / Layout
