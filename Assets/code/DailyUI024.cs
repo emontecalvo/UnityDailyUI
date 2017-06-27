@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class DailyUI024 : DailyUIBase 
 {
+	public RectTransform BoardingRT;
 	public CanvasGroup IntroCG;
 	public CanvasGroup BoardingPassCG;
 	public Button ArrowBtn;
@@ -14,12 +15,13 @@ public class DailyUI024 : DailyUIBase
 	const float TransitionTime = 2f;
 
 	void Start () {
+		BoardingRT.gameObject.SetActive (false);
 		ArrowBtn.onClick.AddListener (OnArrowClicked);
 		ChangeSize1 ();
 	}
 
 	void OnArrowClicked() {
-		Debug.Log ("I AM CLICKED");
+		BoardingRT.gameObject.SetActive (true);
 		DOTween.To (() => IntroCG.alpha, x => IntroCG.alpha = x, 0, TransitionTime);
 		DOTween.To (() => BoardingPassCG.alpha, x => BoardingPassCG.alpha = x, 1, TransitionTime);
 	}

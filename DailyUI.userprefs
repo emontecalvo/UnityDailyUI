@@ -8,11 +8,11 @@
       <File FileName="Assets/code/DailyUI022.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI004.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI001.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI023.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/DailyUI023.cs" Line="51" Column="1" />
       <File FileName="Assets/code/DailyUI002.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI025.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI018.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI024.cs" Line="22" Column="30" />
+      <File FileName="Assets/code/DailyUI024.cs" Line="27" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
