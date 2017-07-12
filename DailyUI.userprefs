@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/DailyUI028.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/DailyUI029.cs">
     <Files>
       <File FileName="../MemoryGame/Assets/code/SymbolType.cs" Line="1" Column="1" />
       <File FileName="../MemoryGame/Assets/code/SymbolDatabase.cs" Line="1" Column="1" />
@@ -12,7 +12,8 @@
       <File FileName="Assets/code/DailyUI002.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI025.cs" Line="1" Column="1" />
       <File FileName="Assets/code/DailyUI018.cs" Line="1" Column="1" />
-      <File FileName="Assets/code/DailyUI028.cs" Line="19" Column="3" />
+      <File FileName="Assets/code/DailyUI028.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/DailyUI029.cs" Line="22" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
